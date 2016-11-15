@@ -1,6 +1,6 @@
 from django.db import models
 
-class Editor (model.Model):
+class Editor (models.Model):
     nombre = models.CharField(max_lenght=30)
     domicilio = models.CharField(max_lenght=50)
     ciudad = models.CharField(max_lenght=60)
