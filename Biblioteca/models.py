@@ -1,19 +1,19 @@
 from django.db import models
 
 class Editor (models.Model):
-    nombre = models.CharField(max_lenght=30)
-    domicilio = models.CharField(max_lenght=50)
-    ciudad = models.CharField(max_lenght=60)
-    estado = models.CharField(max_lenght=30)
-    pais = models.CharField(max_lenght=50)
+    nombre = models.CharField(max_length=30)
+    domicilio = models.CharField(max_length=50)
+    ciudad = models.CharField(max_length=60)
+    estado = models.CharField(max_length=30)
+    pais = models.CharField(max_length=50)
     website = models.URLField()
 
     def __unicode__(self):
         return self.nombre
 
 class Autor(models.Model):
-    nombre = models.CharField(max_lenght=30)
-    apellido = models.CharField(max_lenght=40)
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=40)
     email = models.EmailField(blank=True)
 
     def __unicode__(self):
@@ -21,7 +21,7 @@ class Autor(models.Model):
         return cadena
 
 class Libro(models.Model):
-    titulo = models.CharField(max_lenght=100)
+    titulo = models.CharField(max_length=100)
     autores = models.ManyToManyField(Autor)
     editor = models.ForeignKey(Editor)
     fecha_publicacion = models.DateField()
